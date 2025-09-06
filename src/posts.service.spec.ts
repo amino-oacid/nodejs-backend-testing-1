@@ -16,6 +16,9 @@ describe('PostsService', () => {
     const addedPost = postsService.create(post);
 
     expect(postsService.getAll()).toContainEqual(addedPost);
+    expect(addedPost).toHaveProperty('id');
+    expect(addedPost).toHaveProperty('date');
+    expect(addedPost.text).toBe('Mocked post');
   });
 
   it('should find a post', () => {
